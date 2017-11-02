@@ -5,7 +5,7 @@ import { Component, OnInit } from '@angular/core';
 @Component({
 	selector: 'app-main-form',
 	template: `
-		<button (click)="edit()">Open Existing</button>
+		<button (click)="openExisting()">Open Existing</button>
 		<form [formGroup]="form" (ngSubmit)="onSubmit()">
 			<div [formGroup]="form.get('additionalInfo')">
 				<label>Special Instructions</label>
@@ -38,7 +38,7 @@ export class MainFormComponent implements OnInit {
 	ngOnInit() {
 	}
 
-	edit() {
+	openExisting() {
 		const customer: Customer = {
 			firstName: 'dude',
 			lastName: 'bruh',
