@@ -3,8 +3,8 @@ import { FormBuilder, FormGroup, FormsModule } from '@angular/forms';
 import { Component, OnInit } from '@angular/core';
 
 @Component({
-	selector: 'app-main-form',
-	template: `
+    selector: 'app-main-form',
+    template: `
 		<button (click)="openExisting()">Open Existing</button>
 		<form [formGroup]="form" (ngSubmit)="onSubmit()">
 			<div [formGroup]="form.get('additionalInfo')">
@@ -26,31 +26,31 @@ import { Component, OnInit } from '@angular/core';
 			<button type="submit">Submit</button>
 		</form>
 	`,
-	styles: []
+    styles: []
 })
 export class MainFormComponent implements OnInit {
-	form: FormGroup;
+    form: FormGroup;
 
-	constructor(private formBuilder: FormBuilder, private mainFormModel: MainFormModel) {
-		this.form = this.mainFormModel.group;
-	}
+    constructor(private formBuilder: FormBuilder, private mainFormModel: MainFormModel) {
+        this.form = this.mainFormModel.group;
+    }
 
-	ngOnInit() {
-	}
+    ngOnInit() {
+    }
 
-	openExisting() {
-		const customer: Customer = {
-			firstName: 'dude',
-			lastName: 'bruh',
-			email: 'dude@gmail.com',
-			phone: '8051234567',
-			specialInstructions: 'Leave the package at the door, man.'
-		};
-		this.mainFormModel.initializeFormModel(customer);
-	}
+    openExisting() {
+        const customer: Customer = {
+            firstName: 'dude',
+            lastName: 'bruh',
+            email: 'dude@gmail.com',
+            phone: '8051234567',
+            specialInstructions: 'Leave the package at the door, man.'
+        };
+        this.mainFormModel.initializeFormModel(customer);
+    }
 
-	onSubmit() {
-		console.log(this.mainFormModel.getRequestModel());
-	}
+    onSubmit() {
+        console.log(this.mainFormModel.getRequestModel());
+    }
 
 }
