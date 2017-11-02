@@ -30,11 +30,9 @@ import { Component, OnInit } from '@angular/core';
 })
 export class MainFormComponent implements OnInit {
 	form: FormGroup;
-	formModel: MainFormModel;
 
-	constructor(private formBuilder: FormBuilder) {
-		this.formModel = new MainFormModel(this.formBuilder);
-		this.form = this.formModel.group;
+	constructor(private formBuilder: FormBuilder, private mainFormModel: MainFormModel) {
+		this.form = this.mainFormModel.group;
 	}
 
 	ngOnInit() {
@@ -48,11 +46,11 @@ export class MainFormComponent implements OnInit {
 			phone: '8051234567',
 			specialInstructions: 'Leave the package at the door, man.'
 		};
-		this.formModel.patchValue(customer);
+		this.mainFormModel.initializeFormModel(customer);
 	}
 
 	onSubmit() {
-		console.log(this.formModel.getRequestModel());
+		console.log(this.mainFormModel.getRequestModel());
 	}
 
 }

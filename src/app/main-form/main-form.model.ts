@@ -1,3 +1,4 @@
+import { Injectable } from '@angular/core';
 import { FormBuilder, FormGroup } from '@angular/forms';
 
 export interface Customer {
@@ -8,6 +9,7 @@ export interface Customer {
     phone: string;
 }
 
+@Injectable()
 export class MainFormModel {
     group: FormGroup;
 
@@ -27,7 +29,7 @@ export class MainFormModel {
         };
     }
 
-    patchValue(customer: Customer): void {
+    initializeFormModel(customer: Customer): void {
         this.group.get('additionalInfo').patchValue({
             specialInstructions: customer.specialInstructions
         });

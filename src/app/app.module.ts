@@ -1,3 +1,4 @@
+import { MainFormModel } from './main-form/main-form.model';
 import { MainFormComponent } from './main-form/main-form.component';
 import { ReactiveFormsModule } from '@angular/forms';
 import { BrowserModule } from '@angular/platform-browser';
@@ -14,7 +15,7 @@ import { AppComponent } from './app.component';
     ReactiveFormsModule,
     BrowserModule
   ],
-  providers: [],
+  providers: [MainFormModel],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
