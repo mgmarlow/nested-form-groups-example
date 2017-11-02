@@ -5,26 +5,26 @@ import { Component, OnInit } from '@angular/core';
 @Component({
     selector: 'app-main-form',
     template: `
-		<button (click)="openExisting()">Open Existing</button>
-		<form [formGroup]="form" (ngSubmit)="onSubmit()">
-			<div [formGroup]="form.get('additionalInfo')">
-				<label>Special Instructions</label>
-				<input type="text" formControlName="specialInstructions" />
-			</div>
-			<div [formGroup]="form.get('customerInfo')">
-				<label>First Name</label>
-				<input type="text" formControlName="firstName" />
-				<label>Last Name</label>
-				<input type="text" formControlName="lastName" />
-			</div>
-			<div [formGroup]="form.get('contactInfo')">
-				<label>Email Address</label>
-				<input type="text" formControlName="email" />
-				<label>Phone Number</label>
-				<input type="text" formControlName="phone" />
-			</div>
-			<button type="submit">Submit</button>
-		</form>
+    <button (click)="openExisting()">Open Existing</button>
+    <form [formGroup]="form" (ngSubmit)="onSubmit()">
+        <div [formGroup]="form.get('additionalInfo')">
+            <label>Special Instructions</label>
+            <input type="text" formControlName="specialInstructions" />
+        </div>
+        <div [formGroup]="form.get('customerInfo')">
+            <label>First Name</label>
+            <input type="text" formControlName="firstName" />
+            <label>Last Name</label>
+            <input type="text" formControlName="lastName" />
+        </div>
+        <div [formGroup]="form.get('contactInfo')">
+            <label>Email Address</label>
+            <input type="text" formControlName="email" />
+            <label>Phone Number</label>
+            <input type="text" formControlName="phone" />
+        </div>
+        <button type="submit">Submit</button>
+    </form>
 	`,
     styles: []
 })
