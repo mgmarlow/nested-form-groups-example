@@ -14,7 +14,7 @@ export class MainFormModel {
     group: FormGroup;
 
     constructor(private formBuilder: FormBuilder) {
-        this.group = this.createGroup(formBuilder);
+        this.group = this.createGroup();
     }
 
     getRequestModel(): Customer {
@@ -45,7 +45,7 @@ export class MainFormModel {
         });
     }
 
-    private createGroup(formBuilder: FormBuilder): FormGroup {
+    private createGroup(): FormGroup {
         return this.formBuilder.group({
             additionalInfo: this.formBuilder.group({
                 specialInstructions: ''
